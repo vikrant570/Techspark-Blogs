@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+@layer components {
+  .header-links a {
+    @apply after:bg-gray-900 after:text-white hover:text-white hover:bg-gray-900 rounded-xl ease-in-out duration-300 py-2 px-4;
+  }
+  .main-button {
+    @apply rounded-3xl py-2 bg-orange-400 px-6 text-white font-semibold hover:bg-orange-500 ease-in-out duration-200 cursor-pointer hover:shadow-slate-300 hover:shadow-md;
+  }
+  .secondary-button {
+    @apply font-semibold text-white bg-slate-700 rounded-md shadow-slate-900 shadow-md py-2 hover:bg-slate-900 cursor-pointer ease-in-out duration-200;
+  }
+  .form-inputs {
+    @apply border border-gray-300 rounded-lg px-4 py-2 outline-none focus:border-blue-500;
+  }
+  .tip-tap a {
+    @apply text-blue-600 hover:text-blue-600 ease-in-out duration-200 cursor-pointer;
+  }
+}
+
+.tiptap.ProseMirror {
+  border: none !important;
+  height: 100% !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Bullet Points Styling For the Text editor for post creation. */
+
+.tiptap-editable ul,
+.tiptap-editable ol {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+}
+
+/* Force list-style if blocked by inner <p> */
+
+.tiptap-editable li > p {
+  display: inline;
+  margin: 0;
+}
+
+.tiptap-editable ul li,
+.tiptap-editable ol li {
+  list-style-position: outside;
+  display: list-item;
+  padding-left: 0.5rem;
+}
+
+.tiptap-editable.ul.disc ul {
+  list-style-type: disc;
+}
+.tiptap-editable.ul.circle ul {
+  list-style-type: circle;
+}
+.tiptap-editable.ul.square ul {
+  list-style-type: square;
+}
+
+/* For ordered lists */
+.tiptap-editable.ol.decimal ol {
+  list-style-type: decimal;
+}
+.tiptap-editable.ol.lower-alpha ol {
+  list-style-type: lower-alpha;
+}
+.tiptap-editable.ol.upper-alpha ol {
+  list-style-type: upper-alpha;
+}
+
+/* Heading formats for editor */
+.tiptap-editable h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem 0;
+}
+.tiptap-editable h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.75rem 0 0.4rem 0;
+}
+.tiptap-editable h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.3rem 0;
+}
+
+.list-disc ul {
+  list-style-type: disc;
+}
+.list-circle ul {
+  list-style-type: circle;
+}
+.list-square ul {
+  list-style-type: square;
+}
+.list-decimal ol {
+  list-style-type: decimal;
+}
+.list-lower-alpha ol {
+  list-style-type: lower-alpha;
+}
+.list-upper-alpha ol {
+  list-style-type: upper-alpha;
+}
+
+.list-item-no-paragraph > p {
+  display: contents;
+}
